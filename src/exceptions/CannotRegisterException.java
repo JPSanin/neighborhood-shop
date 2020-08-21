@@ -1,5 +1,6 @@
 package exceptions;
 
+@SuppressWarnings("serial")
 public class CannotRegisterException extends Exception {
 
 	private int docType;
