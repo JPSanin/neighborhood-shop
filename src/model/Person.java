@@ -32,32 +32,6 @@ public class Person {
 		this.docNum=docNum;
 	}
 
-	public String printInfo() {
-		String info="";
-		info+="Document Type:";
-		switch(docType) {
-		case TI:
-			info+=" Identity Card";
-			break;
-
-		case CC:
-			info+=" Citizen Card";
-			break;
-
-		case PP:
-			info+=" Passport";
-			break;
-
-		case FC:
-			info+=" Foreigner Citizen Card";
-			break;
-		}
-		info+="\n Document Number: "+docNum;
-		
-		
-		return info;
-	}
-
 
 	public int getDocType() {
 		return docType;
