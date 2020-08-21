@@ -6,12 +6,15 @@ import java.time.LocalDate;
 public class Shop {
 	private final static int TI=1;
 	private ArrayList<Person> registeredPeople;
+	private int triedToRegister;
 
 	public Shop() {
 		registeredPeople= new ArrayList<Person>();
+		triedToRegister=0;
 	}
 	
 	public void register(int docType, int docNum) throws CannotRegisterException {
+		triedToRegister++;
 		int date= LocalDate.now().getDayOfMonth();
 		int lastNumDate= date%10;
 		int secondToLastNum= ((docNum/10)%10);
@@ -25,6 +28,14 @@ public class Shop {
 	registeredPeople.add(p);
 		
 		
+	}
+
+	public int getTriedToRegister() {
+		return triedToRegister;
+	}
+
+	public void setTriedToRegister(int triedToRegister) {
+		this.triedToRegister = triedToRegister;
 	}
 
 	public ArrayList<Person> getRegisteredPeople() {
