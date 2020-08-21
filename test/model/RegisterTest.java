@@ -20,8 +20,7 @@ class RegisterTest {
 				s.register(2, 79311987);
 			}	
 		}catch(CannotRegisterException cre){
-			System.out.println("The second to last document number does not correspond to todays numbers"
-					+ "so the person cannot enter or register");
+			fail("Cannot register exception is not expected here");
 		}
 	}
 
@@ -30,10 +29,10 @@ class RegisterTest {
 		
 		try {
 				s.register(1, 79311977);
-		
+				fail("Cannot register exception is expected");
 		}catch(CannotRegisterException cre){
-			System.out.println("The document type is Identification Card which means"
-			+ " the person is underage and  cannot enter or register");
+			
+			
 		}
 	}
 	
@@ -48,9 +47,9 @@ class RegisterTest {
 			}else {
 				s.register(2, 66835275);
 			}	
+			fail("Cannot register exception is expected");
 		}catch(CannotRegisterException cre){
-			System.out.println("The second to last document number does not correspond to todays numbers"
-					+ "so the person cannot enter or register");
+			
 		}
 	}
 	
